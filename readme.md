@@ -12,7 +12,7 @@
 * [Step 8 - Create Some Partials including a NavBar](#step-8---create-some-partials-including-a-navbar)
 * [Step 9 - Create the _INDEX_ Route for our Movies](#step-9---create-the-_index_-route-for-our-movies)
 * [Step 10 - Create a Movie Mongoose Model and a Seeds file](#step-10---create-a-movie-mongoose-model-and-a-seeds-file)
-* [Step 11 - Use Mongoose Movie Model in INDEX route:](#step-11---use-mongoose-movie-model-in-index-route:)
+* [Step 11 - Use Mongoose Movie Model in INDEX route](#step-11---use-mongoose-movie-model-in-index-route)
 * [Step 12 - Deploy to Heroku](#step-12---deploy-to-heroku)
 
 ## Step 1 - Create the Project
@@ -350,7 +350,7 @@ Movie.remove({})
 });
 ```
 
-## Step 11 - Use Mongoose Movie Model in INDEX route:
+## Step 11 - Use Mongoose Movie Model in INDEX route
 
 Make the following changes to `routes/movies.js`:
 
