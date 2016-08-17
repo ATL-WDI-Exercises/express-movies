@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-  <script type="text/javascript" src="/javascripts/jquery.min.js" defer></script>
-  <script type="text/javascript" src="/javascripts/bootstrap.min.js" defer></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <% include partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <h1>Welcome to Express Movies</h1>
+  </main>
+
+  <footer>
+    <% include partials/footer %>
+  </footer>
+
+</body>
+<script type="text/javascript" src="/javascripts/jquery.min.js" defer></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js" defer></script>
 </html>

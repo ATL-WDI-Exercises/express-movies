@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>Movies:</h3>
+      <% movies.forEach(function(movie) { %>
+        <dl class="dl-horizontal">
+          <dt>Title</dt><dd><%= movie.title %></dd>
+          <dt>Genre</dt><dd><%= movie.genre %></dd>
+          <dt>Year</dt><dd><%= movie.year %></dd>
+        </dl>
+      <% }) %>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
