@@ -1,7 +1,21 @@
 var mongoose = require('mongoose');
 var Movie = require('./models/movie');
 
-mongoose.connect('mongodb://localhost/express-movies');
+// Connect to database
+if (app.get('env') === 'development') {
+  mongoose.connect('mongodb://localhost/express-movies');
+}
+else {
+  mongoose.connect(process.env.MONGODB_URI);
+}
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+  }
+);
+mongoose.connection.once('open', function() {
+  console.log("Mongoose has connected to MongoDB!");
+});
 
 // our script will not exit until we have disconnected from the db.
 function quit() {
