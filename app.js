@@ -18,7 +18,7 @@ if (app.get('env') === 'development') {
   mongoose.connect('mongodb://localhost/express-movies');
 }
 else {
-  mongoose.connect(process.env.MONGOLAB_URI);
+  mongoose.connect(process.env.MONGODB_URI);
 }
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
