@@ -11,7 +11,7 @@ function makeError(res, message, status) {
 
 // INDEX
 router.get('/', function(req, res, next) {
-  let movieFilter = {};
+  var movieFilter = {};
 
   if (req.query.genre) {
     movieFilter.genre = req.query.genre;
