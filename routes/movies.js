@@ -1,17 +1,17 @@
-var express = require('express');
-var Movie = require('../models/movie');
-var router = express.Router();
+let express = require('express');
+let Movie = require('../models/movie');
+let router = express.Router();
 
 function makeError(res, message, status) {
   res.statusCode = status;
-  var error = new Error(message);
+  let error = new Error(message);
   error.status = status;
   return error;
 }
 
 // INDEX
 router.get('/', function(req, res, next) {
-  var movieFilter = {};
+  let movieFilter = {};
 
   if (req.query.genre) {
     movieFilter.genre = req.query.genre;
