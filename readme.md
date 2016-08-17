@@ -380,7 +380,7 @@ router.get('/', function(req, res, next) {
 
 ```bash
 heroku create
-git remote -v     # Displays the newly creates Git remotes for Heroku
+git remote -v     # Displays the newly created Git remotes for Heroku
 ```
 
 12d. Deploy project by Git pushing to Heroku
