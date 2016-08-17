@@ -14,11 +14,11 @@ var moviesRouter = require('./routes/movies');
 var app = express();
 
 // Connect to database
-if (app.get('env') === 'development') {
-  mongoose.connect('mongodb://localhost/express-movies');
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
 }
 else {
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect('mongodb://localhost/express-movies');
 }
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
