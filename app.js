@@ -14,7 +14,20 @@ var moviesRouter = require('./routes/movies');
 var app = express();
 
 // Connect to database
-mongoose.connect('mongodb://localhost/express-movies');
+if (app.get('env') === 'development') {
+  mongoose.connect('mongodb://localhost/express-movies');
+}
+else {
+  mongoose.connect(process.env.MONGOLAB_URI);
+}
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+  }
+);
+mongoose.connection.once('open', function() {
+  console.log("Mongoose has connected to MongoDB!");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
