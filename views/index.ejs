@@ -12,6 +12,16 @@
   <main>
     <div class="jumbotron">
       <h1>Welcome to Express Movies</h1>
+
+      <button class="btn btn-primary"
+              onclick="getCounter()">Click Me!</button>
+
+      <form method="POST" action="/ajax-counter?_method=PUT">
+        <input type="number" name="counter">
+        <input type="submit" class="btn btn-success" value="Submit">
+      </form>
+
+      <h3 id="counter"><%= counter %></h3>
   </main>
 
   <footer>
@@ -21,4 +31,12 @@
 </body>
 <script type="text/javascript" src="/javascripts/jquery.min.js" defer></script>
 <script type="text/javascript" src="/javascripts/bootstrap.min.js" defer></script>
+
+<script>
+  function getCounter() {
+    $.get( "/ajax-counter", function(json) {
+      $("#counter").text( json.counter );
+    });
+  }
+</script>
 </html>
